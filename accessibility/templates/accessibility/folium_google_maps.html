@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_81d8d7767a89684feb1e6f3c94073ba5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_81d8d7767a89684feb1e6f3c94073ba5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_81d8d7767a89684feb1e6f3c94073ba5 = L.map(
+                "map_81d8d7767a89684feb1e6f3c94073ba5",
+                {
+                    center: [43.473040488968536, -80.53953064039003],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 17,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c99e1898250b6a2325653097b75036aa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var tile_layer_46cf09bc81eaee22ec53bdaab1347bb8 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=r\u0026x={x}\u0026y={y}\u0026z={z}\u0026key=AIzaSyBH_eCUrklBvV1755CQ9qJWk8j4tLCIUSw",
+                {"attribution": "Google", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_512d0d7fdc40e54978185d164b9d9a28 = L.marker(
+                [43.4741599, -80.5428987],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_c634efb01947ecfb3f106afb0fd04542 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3220b3708562c592481c8ca01a6980b3 = $(`<div id="html_3220b3708562c592481c8ca01a6980b3" style="width: 100.0%; height: 100.0%;">200 Ring Rd, Waterloo, ON N2L 3G1 University of Waterloo Davis Centre Library  Description</div>`)[0];
+                popup_c634efb01947ecfb3f106afb0fd04542.setContent(html_3220b3708562c592481c8ca01a6980b3);
+            
+        
+
+        marker_512d0d7fdc40e54978185d164b9d9a28.bindPopup(popup_c634efb01947ecfb3f106afb0fd04542)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_85b479df6d8171a5f37f1dfb41068292 = L.marker(
+                [43.4683522, -80.5425357],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_95c82636101273a91981e88bdcc3a610 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_60030fbde914f996d9d4e9d9171505fe = $(`<div id="html_60030fbde914f996d9d4e9d9171505fe" style="width: 100.0%; height: 100.0%;">200 University Ave W, Waterloo, ON N2L 3G1 University of Waterloo Engineering 7  Accessibility Parking Available. Spacious</div>`)[0];
+                popup_95c82636101273a91981e88bdcc3a610.setContent(html_60030fbde914f996d9d4e9d9171505fe);
+            
+        
+
+        marker_85b479df6d8171a5f37f1dfb41068292.bindPopup(popup_95c82636101273a91981e88bdcc3a610)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_ded4498568228da44340469fd8b2bc44 = L.marker(
+                [43.4725458, -80.5361185],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_948fb5f0c2e6c68d756677797cff0106 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92b202b52b97310002cff89693be6651 = $(`<div id="html_92b202b52b97310002cff89693be6651" style="width: 100.0%; height: 100.0%;">150 University Ave W Unit 6B, Waterloo, ON N2L 3E4 Gol's Lanzhou Noodle Waterloo  Plaza Parking Spaces.</div>`)[0];
+                popup_948fb5f0c2e6c68d756677797cff0106.setContent(html_92b202b52b97310002cff89693be6651);
+            
+        
+
+        marker_ded4498568228da44340469fd8b2bc44.bindPopup(popup_948fb5f0c2e6c68d756677797cff0106)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_2a8ae861647d4164e511089774b84a14 = L.marker(
+                [43.47129950000001, -80.542715],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_d5237627784d198b891ac7e328e5d61e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be560dffb8e1665774d480c03847b356 = $(`<div id="html_be560dffb8e1665774d480c03847b356" style="width: 100.0%; height: 100.0%;">University of Waterloo, Earth Sciences and Chemistry Building, Room 109, 200 University Ave W Building, Waterloo, ON N2L 3G1 University of Waterloo, Earth Sciences and Chemistry Building  Braille available on signs</div>`)[0];
+                popup_d5237627784d198b891ac7e328e5d61e.setContent(html_be560dffb8e1665774d480c03847b356);
+            
+        
+
+        marker_2a8ae861647d4164e511089774b84a14.bindPopup(popup_d5237627784d198b891ac7e328e5d61e)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_d6c836452c66b916352ec0a3f755eb5b = L.marker(
+                [43.4683522, -80.5425357],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_149d42a11de25d6aeb664c7455bb80d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5064d03e58895658140b268466c47cc0 = $(`<div id="html_5064d03e58895658140b268466c47cc0" style="width: 100.0%; height: 100.0%;">Engineering 7, Room 3102, 200 University Ave W, Waterloo, ON N2L 3G1 University of Waterloo Engineering 5  Braille available on signs</div>`)[0];
+                popup_149d42a11de25d6aeb664c7455bb80d4.setContent(html_5064d03e58895658140b268466c47cc0);
+            
+        
+
+        marker_d6c836452c66b916352ec0a3f755eb5b.bindPopup(popup_149d42a11de25d6aeb664c7455bb80d4)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_b3eff161043b3ada10b58bac4b77169f = L.marker(
+                [43.43721, -80.5596424],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_f6c871c18bbb1ed4fc9c67b1ea874056 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_86186fdc657e7d9900592098cb4584db = $(`<div id="html_86186fdc657e7d9900592098cb4584db" style="width: 100.0%; height: 100.0%;">DWE 3520A University Ave W, Waterloo, ON N2L 3G1 Iron Warrior  All gender and also accessible washrooms.</div>`)[0];
+                popup_f6c871c18bbb1ed4fc9c67b1ea874056.setContent(html_86186fdc657e7d9900592098cb4584db);
+            
+        
+
+        marker_b3eff161043b3ada10b58bac4b77169f.bindPopup(popup_f6c871c18bbb1ed4fc9c67b1ea874056)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_e5a6c19ba10882ba0a80cf7703bb298a = L.marker(
+                [43.4705925, -80.5413274],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_31086ebd52cbea811556a36ad68199d0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7442cdf3fa03f388b8a5d3b89b5d4ca1 = $(`<div id="html_7442cdf3fa03f388b8a5d3b89b5d4ca1" style="width: 100.0%; height: 100.0%;">Physics, University of, 200 University Ave W, Waterloo, ON N2L 3G1 Gustav Bakos Observatory University of Waterloo  Has elevator, not busy</div>`)[0];
+                popup_31086ebd52cbea811556a36ad68199d0.setContent(html_7442cdf3fa03f388b8a5d3b89b5d4ca1);
+            
+        
+
+        marker_e5a6c19ba10882ba0a80cf7703bb298a.bindPopup(popup_31086ebd52cbea811556a36ad68199d0)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_d4293c59d4763549034d8899f13c7919 = L.marker(
+                [43.4741599, -80.5428987],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_2eca836601e835184730fcd235d6b9f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_57f6c52387cb8d4a94b1064b04e69e3a = $(`<div id="html_57f6c52387cb8d4a94b1064b04e69e3a" style="width: 100.0%; height: 100.0%;">200 Ring Rd, Waterloo, ON N2L 3G1200 Ring Rd, Waterloo, ON N2L 3G1 University of Waterloo Davis Centre Library  Braille on signs.</div>`)[0];
+                popup_2eca836601e835184730fcd235d6b9f8.setContent(html_57f6c52387cb8d4a94b1064b04e69e3a);
+            
+        
+
+        marker_d4293c59d4763549034d8899f13c7919.bindPopup(popup_2eca836601e835184730fcd235d6b9f8)
+        ;
+
+        
+    
+    
+            tile_layer_c99e1898250b6a2325653097b75036aa.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            tile_layer_46cf09bc81eaee22ec53bdaab1347bb8.addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+            var marker_2a4e7184f08596b44a732eb582eea746 = L.marker(
+                [43.4683522, -80.5425357],
+                {}
+            ).addTo(map_81d8d7767a89684feb1e6f3c94073ba5);
+        
+    
+        var popup_a909398aea9e39e4f2642850fdf55b65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_61e1cc30e7ad114321be4d1a4fbc047f = $(`<div id="html_61e1cc30e7ad114321be4d1a4fbc047f" style="width: 100.0%; height: 100.0%;">200 University Ave W, Waterloo, ON N2L 3G1 University of Waterloo  Accessibility Parking Available</div>`)[0];
+                popup_a909398aea9e39e4f2642850fdf55b65.setContent(html_61e1cc30e7ad114321be4d1a4fbc047f);
+            
+        
+
+        marker_2a4e7184f08596b44a732eb582eea746.bindPopup(popup_a909398aea9e39e4f2642850fdf55b65)
+        ;
+
+        
+    
+</script>
+</html>

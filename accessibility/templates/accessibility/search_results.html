@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{location}}</title>
+</head>
+<div class="topnav">
+    <a href = "{%url 'home'%}">Home</a>
+    <a href = "{%url 'map'%}">Map</a>
+    <a href = "{%url 'add_facility'%}">Add Facility</a>
+    <a href = "/camera/capture/">SeeIt</a>
+    <a href = "{%url 'search'%}">Search</a>
+</div>
+<body style="margin-left: 15%;margin-top: 5%;">
+    <h1>Search Results - {{location}}</h1>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.description }}</li>
+            <li>likes: {{ comment.likes }}</li>
+            <li>dislikes: {{ comment.dislikes }}</li>
+            <li>Accessibility Features: 
+                {% for tag in comment.tags.all %}
+                <blockquote><li>{{tag.feature}}</li></blockquote>
+                {% endfor %}
+            </li>
+        {% empty %}
+            <li>No items found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'search' %}">Back to search</a>
+</body>
+</html>
+
+<style>
+    .topnav{
+    background-color: rgb(255, 255, 255, 0.5);
+    height:10%;
+    padding-top: 3%;
+    padding-bottom: auto;
+    text-align: right;
+    padding-right:5%;
+}
+
+a{
+    color:black;
+    padding-left:20px;
+    font-weight: 600;
+    font-size: 20px;
+}
+</style>
+
+<!--print(location)
+        place = models.Location.objects.get(name = location)
+        print(place)
+        comments = models.Comment.objects.filter(location = place) #queryset
+        tags = []
+        likes = []
+        dislikes = []
+        for comment in comments:
+          print(comment)
+          tags.append(comment.tags)
+          likes.append(comment.likes)
+          dislikes.append(comment.dislikes)
+        #each comment's tags, likes and dislikes can be listed using indexes
+        print('Received Location:', location)
+        return redirect(, 'accessibility/search_results.html', {"location":location})
+-->

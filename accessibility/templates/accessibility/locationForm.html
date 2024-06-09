@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+  <link rel = "stylesheet" type = "text/css" href = "{% static 'css/form.css' %}?{% now 'U' %}" >
+  {% block content %}
+  {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+  {% endblock %}
+  <div class="topnav">
+    <a href = "{%url 'home'%}">Home</a>
+    <a href = "{%url 'map'%}">Map</a>
+    <a href = "{%url 'add_facility'%}">Add Facility</a>
+    <a href = "/camera/capture/">SeeIt</a>
+    <a href = "{%url 'search'%}">Search</a>
+  </div>
+  <h1>Add A New Facility</h1>
+  <form method = "post">
+    {% csrf_token %}
+    {{ locationForm.as_p }}
+    {{ commentForm.as_p }}
+    <button type="submit">Save</button>
+  </form>
+</html>
+<style>
+  .topnav{
+    background-color: rgb(255, 255, 255, 0.5);
+    height:10%;
+    padding-top: 3%;
+    padding-bottom: auto;
+    text-align: right;
+    padding-right:5%;
+  }
+
+  a{
+    color:black;
+    padding-left:20px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+</style>

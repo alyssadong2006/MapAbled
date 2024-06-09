@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take a Picture</title>
+</head>
+<style>
+    #title{
+        margin-left:10%;
+    }
+    #video{
+        width:640px; 
+        height:480px;
+        margin-left:25%;
+    }
+    #snap{
+        width: 100vw; /* Set width to 100% of viewport width */
+        height: 100vh; /* Set height to 100% of viewport height */
+        position: fixed; /* Position the button */
+        top: 0; /* Align button to the top of the viewport */
+        left: 0; /* Align button to the left of the viewport */
+        z-index: 9999; /* Ensure button is above other elements */
+        background-color: transparent;
+    }
+    #canvas{
+        display:none;
+    }
+    #photo-form{
+        display:none;
+    }
+</style>
+<body>
+    <h1 id="title">Take a Picture</h1>
+    <video id="video" autoplay></video>
+    <button id="snap"></button>
+    <canvas id="canvas" width = 640px height = 480px></canvas>
+    <form id="photo-form" method="POST" enctype="multipart/form-data" action="{% url 'capture_photo' %}">
+        {% csrf_token %}
+        <input type="hidden" name="photo" id="photo">
+        <button type="submit" id = "submit">Upload Photo</button>
+    </form>
+
+    <script>
+        // Access the device camera and stream to video element
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                var video = document.getElementById('video');
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(function(err) {
+                console.error("Error accessing the camera: " + err);
+            });
+
+        // Trigger photo capture
+        document.getElementById('snap').addEventListener('click', function() {
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var video = document.getElementById('video');
+            context.drawImage(video, 0, 0, 640, 480);
+
+            var dataURL = canvas.toDataURL('image/png');
+            document.getElementById('photo').value = dataURL;
+            video.pause();
+            var button = document.getElementById("submit");
+            button.click();
+        });
+    </script>
+</body>
+</html>

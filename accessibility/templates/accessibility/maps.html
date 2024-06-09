@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang = "en">
+  {% load static %}<link rel = "stylesheet" type = "text/css" href = "{% static 'home.css' %}?{% now 'U' %}" >
+  {% block js %}
+  <script src="{% static 'maps.js' %}"></script>
+  {% endblock %}
+  <div class="topnav">
+    <a href = "{%url 'home'%}">Home</a>
+    <a href = "{%url 'map'%}">Map</a>
+    <a href = "{%url 'add_facility'%}">Add Facility</a>
+    <a href = "/camera/capture/">See It</a>
+    <a href = "{%url 'search'%}">Search</a>
+</div>
+  {% include 'accessibility/folium_google_maps.html' %}
+</html>

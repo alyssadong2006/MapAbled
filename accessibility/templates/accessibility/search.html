@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AutoComplete</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+<div class="topnav">
+  <a href = "{%url 'home'%}">Home</a>
+  <a href = "{%url 'map'%}">Map</a>
+  <a href = "{%url 'add_facility'%}">Add Facility</a>
+  <a href = "/camera/capture/">SeeIt</a>
+  <a href = "{%url 'search'%}">Search</a>
+</div>
+<body style="margin-left: 15%;margin-top: 5%;">
+  <h1>Search For a location</h1>
+  <input type="text" id="tags">
+  <button id="submit" type="button">Submit</button>
+
+  <script>
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+
+    const csrftoken = getCookie('csrftoken');
+    console.log('CSRF Token:', csrftoken);
+
+    $(document).ready(function() {
+    console.log('jQuery Ready'); // Check if jQuery is ready
+    });
+
+    $(function() {
+      var availableTags = [
+        {% if locations|length == 0 %}
+        "empty"
+        {% else %}
+        {% for location in locations %}
+          "{{ location.name }}",
+        {% endfor %}
+        {% endif %}
+      ];
+      $("#tags").autocomplete({
+        source: availableTags
+      });
+
+      $("#submit").click(function() {
+        event.preventDefault();
+        var selectedLocation = $("#tags").val();
+        console.log(selectedLocation)
+        var url = "{% url 'receive_location' %}?location=" + encodeURIComponent(selectedLocation);
+        $.ajax({
+          url: url,
+          method: 'GET',
+          success: function (data){
+          window.location.assign(url);},
+          error: function(error) {
+            alert('Error sending location.');
+            console.log(error);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+<style>
+  .topnav{
+  background-color: rgb(255, 255, 255, 0.5);
+  height:10%;
+  padding-top: 3%;
+  padding-bottom: auto;
+  text-align: right;
+  padding-right:5%;
+}
+
+a{
+  color:black;
+  padding-left:20px;
+  font-weight: 600;
+  font-size: 20px;
+}
+</style>
